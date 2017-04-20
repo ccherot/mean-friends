@@ -1,0 +1,50 @@
+<p>
+  Show Friend Details
+</p>
+{{friend | json}}
+<br>
+<label
+    id="firstName" 
+    class="firstNameClass" 
+    name="firstName" >
+    {{friend.firstName}}</label>
+  <label 
+    id="firstNameLabel"
+    class="firstNameLabelClass">
+    First Name</label><br>
+  <label 
+    id="lastName"
+    class="lastNameClass"
+    name="lastName">
+    {{friend.lastName}}</label>
+  <label 
+    id=lastNameLabel
+    class="lastNameLabelClass">
+    Last Name</label><br>
+  <label
+    type="date"
+    id="dateOfBirth"
+    class="dateOfBirthClass"
+    name="dateOfBirth">
+    {{friend.dob | date:'shortDate'}}</label><!--  | date:'shortDate -->
+  <label
+    id="dateOfBirthLabel"
+    class="dateOfBirthLabelClass">
+  Birthday</label><br>
+  <label
+    type="date"
+    id="dateAdded"
+    class="dateAddedClass"
+    name="dateAdded">
+    {{ friend.createdAt | date:'shortDate'}}</label>
+    <label
+    id="dateOfBirthLabel"
+    class="dateOfBirthLabelClass">
+  User Added</label><br><br>
+  <input
+    id="showListButton"
+    class="showListButtonClass"
+    type="submit"
+    name="showList"
+    value="Show List"
+    (click)="onClickShowList()">

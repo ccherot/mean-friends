@@ -1,0 +1,33 @@
+<p>
+  friends works!
+</p>
+{{ friends | json }}
+<hr>
+showFriendsList: {{ showFriendsList }}
+<hr>
+showEditView: {{ showEditView }}
+<hr>
+showShowView: {{ showShowView }}
+<hr>
+<app-friends-list 
+  [friends]="friends" 
+  *ngIf="showFriendsList" 
+  (friendsListCreateClick)="onFriendsListCreateClick($event)" 
+  (friendsListDeleteClick)="onFriendsListDeleteClick($event)" 
+  (friendsListEditClick)="onFriendsListEditClick($event)"
+  (friendsListShowClick)="onFriendsListShowClick($event)">
+</app-friends-list>
+<app-friends-show 
+  [friend]="friendToShow" 
+  *ngIf="showShowView" 
+  (showFriendsListClick)="onShowFriendsListClick($event)">
+</app-friends-show>
+<app-friends-create 
+  (friendCreateSubmitClick)="onShowFriendsListClick($event)" 
+  *ngIf="showFriendsCreate">
+</app-friends-create>
+<app-friends-edit 
+  [friend]="friendToEdit" 
+  (friendsEditSubmitClick)="onShowFriendsListClick($event)" 
+  *ngIf="showEditView">
+</app-friends-edit>

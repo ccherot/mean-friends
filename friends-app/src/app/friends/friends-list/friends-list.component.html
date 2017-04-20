@@ -1,0 +1,31 @@
+<p>
+  Friends List
+</p>
+{{_friendsService.friends | json }}
+<input 
+  type="search"
+  placeholder="Filter: Birthday"
+  id="searchFilter" 
+  name="searchInput" 
+  class="searchFilterClass"
+  (keydown)="onKeyDown($event)">  
+  <table>
+    <th>Name</th>
+    <th>Show</th>
+    <th>Update</th>
+    <th>Delete</th>
+    <tr *ngFor="let friend of friends">
+      <td>{{friend.firstName}} {{friend.lastName}}</td>
+      <td> <button (click)="onClickShow(friend)">Show</button> 
+      <td><button (click)="onClickEdit(friend)">Edit</button> 
+      <td><button (click)="onClickDelete(friend)">Delete</button>
+    </tr>
+  </table>
+
+  <button 
+  id=createButton
+  class="createButtonClass"
+  (click)="onClickCreate()">
+  New Friend
+</button>
+

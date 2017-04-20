@@ -1,0 +1,47 @@
+<p>
+  Add a new friend!
+</p>
+{{newFriend}}
+
+<form (submit)="onClickSubmit()">
+  <input 
+    type="text"
+    id="formFirstName" 
+    class="firstNameClass" 
+    type="text" 
+    name="firstName" 
+    placeholder="first name" 
+    [(ngModel)]="newFriend.firstName">
+  <label 
+    id="firstNameLabel"
+    class="firstNameLabelClass">
+    First Name</label><br>
+  <input 
+    type="text"
+    id="formLastName"
+    class="lastNameClass"
+    name="lastName"
+    placeholder="last name"
+    [(ngModel)]="newFriend.lastName">
+  <label 
+    id=lastNameLabel
+    class="lastNameLabelClass">
+    Last Name</label><br>
+  <input
+    type="date"
+    id="formDateOfBirth"
+    class="dateOfBirthClass"
+    name="dateOfBirth"
+    placeholder="01/01/2017"
+    [(ngModel)]="newFriend.dob"> <!--  | date:'shortDate -->
+  <label
+    id="dateOfBirthLabel"
+    class="dateOfBirthLabelClass">
+  Date of Birth</label><br>
+  <input
+    id="formCreateButton"
+    class="formCreateButtonClass"
+    type="submit"
+    name="submit"
+    value="Create Friend">
+</form>

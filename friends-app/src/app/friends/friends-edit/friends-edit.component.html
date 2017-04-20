@@ -1,0 +1,47 @@
+<p>
+  Edit Friend Information
+</p>
+{{friend | json}}
+<form (submit)="onClickSubmit()">
+  <input 
+    type="text"
+    id="formFirstName" 
+    class="firstNameClass" 
+    type="text" 
+    name="firstName" 
+    placeholder="first name" 
+    [(ngModel)]="friend.firstName">
+  <label 
+    id="firstNameLabel"
+    class="firstNameLabelClass">
+    First Name</label><br>
+  <input 
+    type="text"
+    id="formLastName"
+    class="lastNameClass"
+    name="lastName"
+    placeholder="last name"
+    [(ngModel)]="friend.lastName">
+  <label 
+    id=lastNameLabel
+    class="lastNameLabelClass">
+    Last Name</label><br>
+  <input
+    type="date"
+    id="formDateOfBirth"
+    class="dateOfBirthClass"
+    name="dateOfBirth"
+    
+    [(ngModel)]="friend.dob"> <!--  | date:'shortDate -->
+  <label
+    id="dateOfBirthLabel"
+    class="dateOfBirthLabelClass">
+  Date of Birth</label><br>
+  <input
+    id="formCreateButton"
+    class="formCreateButtonClass"
+    type="submit"
+    name="submit"
+    value="Update Friend">
+</form>
+
